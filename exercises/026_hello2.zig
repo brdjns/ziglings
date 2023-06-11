@@ -19,9 +19,9 @@ pub fn main() !void {
     const stdout = std.io.getStdOut().writer();
 
     // Unlike std.debug.print(), the Standard Out writer can fail
-    // with an error. We don't care _what_ the error is, we want
+    // with an error. We don't care _what_ the error is; we want
     // to be able to pass it up as a return value of main().
     //
     // We just learned of a single statement which can accomplish this.
-    stdout.print("Hello world!\n", .{});
+    try stdout.print("Hello world!\n", .{});
 }
